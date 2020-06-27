@@ -1,7 +1,7 @@
 import XCTest
 
-import KSGeometryTests
+import KSGeometryPackageTests
 
 var tests = [XCTestCaseEntry]()
-tests += KSGeometryTests.allTests()
+tests += KSGeometryPackageTests.allTests()
 XCTMain(tests)

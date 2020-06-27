@@ -1,6 +1,6 @@
 
 import XCTest
-import KSGeometry
+import KSGeometryPackage
 
 class KSPointTestCase: XCTestCase {
 

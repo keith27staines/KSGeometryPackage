@@ -1,5 +1,5 @@
 import XCTest
-import KSGeometry
+import KSGeometryPackage
 
 class KSRectTestCase: XCTestCase {
     
