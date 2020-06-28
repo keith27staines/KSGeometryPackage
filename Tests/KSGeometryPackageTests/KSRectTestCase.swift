@@ -184,6 +184,27 @@ class KSRectTestCase: XCTestCase {
         XCTAssertFalse(sut.intersects(other))
     }
     
+    func test_scaled_on_center() {
+        let sut = makeSUT()
+        let scaled = sut.scaled(on: sut.center, by: 2)
+        XCTAssertEqual(sut.size.scaled(by: 2), scaled.size)
+        XCTAssertEqual(sut.center, scaled.center)
+    }
+    
+    func test_scaled_on_origin() {
+        let sut = makeSUT()
+        let scaled = sut.scaled(on: sut.origin, by: 2)
+        XCTAssertEqual(sut.size.scaled(by: 2), scaled.size)
+        XCTAssertEqual(sut.origin, scaled.origin)
+    }
+    
+    func test_scaled_on_distalPoint() {
+        let sut = makeSUT()
+        let scaled = sut.scaled(on: sut.distalPoint, by: 2)
+        XCTAssertEqual(sut.size.scaled(by: 2), scaled.size)
+        XCTAssertEqual(sut.distalPoint, scaled.distalPoint)
+    }
+    
     func makeSUT() -> KSRect {
         KSRect(origin: testOrigin, size: testSize)
     }

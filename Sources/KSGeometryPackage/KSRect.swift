@@ -75,3 +75,12 @@ public struct KSRect: Hashable, Equatable {
         self.init(origin: KSPoint(x: x, y: y), size: KSSize(width: width, height: height))
     }
 }
+
+public extension KSRect {
+    func scaled(on anchor: KSPoint, by f: Float) -> KSRect {
+        let newOriginX = anchor.x + (origin.x - anchor.x)*f
+        let newOriginY = anchor.y + (origin.y - anchor.y)*f
+        let newOrigin = KSPoint(x: newOriginX, y: newOriginY)
+        return KSRect(origin: newOrigin, size: size.scaled(by: f))
+    }
+}
